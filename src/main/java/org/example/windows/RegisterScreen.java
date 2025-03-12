@@ -1,4 +1,6 @@
 package org.example.windows;
+import org.example.User;
+import org.example.DatabaseManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -56,6 +58,29 @@ public class RegisterScreen {
         registerButton.setForeground(new Color(27, 27, 27));
         registerButton.setBackground(new Color(198, 198, 198));
         panel.add(registerButton);
+
+        registerButton.addActionListener(e -> {
+            String fullName = nameField.getText().toLowerCase();
+            String cpf = cpfField.getText();
+            String phone = phoneField.getText();
+
+            User user = new User(fullName, cpf, phone);
+
+
+            if(fullName.equals("") || cpf.equals("") || phone.equals("")){
+                JOptionPane.showMessageDialog(null, "Warning!! \n Please fill in all fields!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                user.saveUser();
+                JOptionPane.showConfirmDialog(
+                        null,
+                        "Registered user!\n\n" +
+                                "Login: " + user.getLogin() +
+                                "\nPassword: " + user.getPassword(),
+                        "Registered",
+                        JOptionPane.WARNING_MESSAGE
+                );
+
+        });
         
         JButton backButton = new JButton("Back");
         backButton.setBounds(280, 470, 250, 50);

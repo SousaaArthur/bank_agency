@@ -26,7 +26,7 @@ public class MainScreen {
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         panel.add(titleLabel);
 
-        JLabel userNameLabel = new JLabel("User name:" + " Arthur Araújo Sousa", SwingConstants.CENTER);
+        JLabel userNameLabel = new JLabel("User name:" + " Admin", SwingConstants.CENTER);
         userNameLabel.setBounds(50, 100, 700, 30);
         userNameLabel.setForeground(new Color(191, 191, 191));
         userNameLabel.setFont(new Font("Arial", Font.BOLD, 18));

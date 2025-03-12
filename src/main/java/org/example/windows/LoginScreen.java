@@ -48,14 +48,12 @@ public class LoginScreen {
         panel.add(loginButton);
 
         loginButton.addActionListener(e -> {
-            frame.dispose();
-            new MainScreen();
-//            if(loginField.getText().equals("") && new String(passwordField.getPassword()).equals("")){
-//                JOptionPane.showConfirmDialog(loginButton, "Erro!! \n Usuário ou senha invalido!","Aviso", JOptionPane.WARNING_MESSAGE);
-//            } else {
-//                frame.dispose();
-//                new MainScreen();
-//            }
+            if(loginField.getText().equals("admin") && new String(passwordField.getPassword()).equals("admin")){
+                frame.dispose();
+                new MainScreen();
+            } else {
+                JOptionPane.showConfirmDialog(loginButton, "Erro!! \n Usuário ou senha invalido!","Aviso", JOptionPane.WARNING_MESSAGE);
+            }
         });
 
         JButton registerButton = new JButton("Register");
